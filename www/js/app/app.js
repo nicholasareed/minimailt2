@@ -276,18 +276,19 @@ var App = {
 
 		var usePg = true;
 		if(usePg){
-			var pushNotification;
 			try 
 			{ 
-				pushNotification = window.plugins.pushNotification;
+				var pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
 					alert('android');
 
 					$("#app-status-ul").append('<li>registering android</li>');
 					pushNotification.register(function(){
 						alert('success');
-					}, function(){
+					}, function(err){
 						alert('failed');
+						console.log(err);
+						alert(err);
 					}, {"senderID":"312360250527","ecb":"onNotificationGCM"});
 				} else {
 					alert('not');

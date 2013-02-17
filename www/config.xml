@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = 'http://www.w3.org/ns/widgets'
         xmlns:gap = 'http://phonegap.com/ns/1.0'
-        id        = "org.devgirl.pgb-push-app2"
+        id        = "com.emailbox.minimail"
         version   = "0.0.1">
     <name>minimail</name>
 
@@ -44,6 +44,8 @@
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
+
 	<gap:plugin name="PushPlugin"/>
 	<gap:plugin name="ChildBrowser"/>
+
 </widget>
