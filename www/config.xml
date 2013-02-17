@@ -6,11 +6,11 @@
     <name>minimail</name>
 
     <description>
-        minimail with Push
+        an open source mobile email app
     </description>
 
     <author href="https://getemailbox.com" email="nick@getemailbox.com">
-        Nick Reed
+        emailbox
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
