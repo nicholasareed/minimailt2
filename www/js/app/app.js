@@ -51,7 +51,7 @@ var App = {
 		App.Data.xy.win_width = $(window).width();
 
 		var currentUrl = window.location.href;
-		alert('h');
+		
 		// Filepicker
 		filepicker.setKey(App.Credentials.filepicker_key);
 
@@ -120,8 +120,6 @@ var App = {
 		App.router = new App.Router();
 		Backbone.history.start({silent: true}); // Launches "" router
 		App.router.navigate('',true);
-
-		alert('t');
 
 		App.Utils.Storage.get(App.Credentials.prefix_user_token + 'user_token')
 			.then(function(user_token){
@@ -230,8 +228,6 @@ var App = {
 			});
 
 
-		alert('g');
-
 		// Forge options
 		// - http://docs.trigger.io/en/v1.4/modules/event.html
 		if(useForge){
@@ -274,34 +270,53 @@ var App = {
 
 		}
 
-		var usePg = true;
+		// Phonegap/cordova Push Notifications
 		if(usePg){
-			try 
-			{ 
+
+			// Push notifications
+			try { 
 				var pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
-					alert('android');
+					// alert('android push');
 
 					$("#app-status-ul").append('<li>registering android</li>');
 					pushNotification.register(function(){
-						alert('success');
+						alert('success w/ Push Notifications');
 					}, function(err){
-						alert('failed');
+						alert('failed Push Notifications');
 						console.log(err);
 						alert(err);
 					}, {"senderID":"312360250527","ecb":"onNotificationGCM"});
 				} else {
-					alert('not');
+					// alert('not');
 					$("#app-status-ul").append('<li>registering iOS</li>');
 					pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
 			}
-			catch(err) 
-			{ 
+			catch(err) { 
 				txt="There was an error on this page.\n\n"; 
 				txt+="Error description: " + err.message + "\n\n"; 
 				alert(txt); 
-			} 
+			}
+
+
+
+			// Init MENU button on Android (not always there?)
+			document.addEventListener("menubutton", function(){
+				Backbone.history.loadUrl('confirm_logout');
+			}, false);
+		
+			// Init BACK button on Android
+			// - disable default first
+			document.addEventListener("backbutton", function(killa){
+				var a = confirm('Close minimail? ');
+				if(a){
+					navigator.app.exitApp();
+				}
+				return;
+			}, false);
+
+
 		}
 
 
