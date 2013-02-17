@@ -5830,7 +5830,6 @@ App.Views.BodyLogin = Backbone.View.extend({
 			callback : [location.protocol, '//', location.host, location.pathname].join('')
 		};
 
-		var usePg = true;
 		if(useForge){
 			p.callback = 'https://getemailbox.com/testback/';
 			var params = $.param(p);
@@ -5891,8 +5890,6 @@ App.Views.BodyLogin = Backbone.View.extend({
 				});
 		} else if(usePg){
 			
-			alert(1);
-
 			p.callback = 'https://getemailbox.com/testback/'
 			var params = $.param(p);
 			var call_url = App.Credentials.base_api_url + "/apps/authorize/?" + params;

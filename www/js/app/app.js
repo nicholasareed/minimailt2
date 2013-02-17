@@ -284,8 +284,8 @@ var App = {
 						alert('success w/ Push Notifications');
 					}, function(err){
 						alert('failed Push Notifications');
-						console.log(err);
-						alert(err);
+						// console.log(err);
+						// alert(err);
 					}, {"senderID":"312360250527","ecb":"onNotificationGCM"});
 				} else {
 					// alert('not');
@@ -298,8 +298,6 @@ var App = {
 				txt+="Error description: " + err.message + "\n\n"; 
 				alert(txt); 
 			}
-
-
 
 			// Init MENU button on Android (not always there?)
 			document.addEventListener("menubutton", function(){

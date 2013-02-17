@@ -99,9 +99,26 @@
 		if(typeof forge !== 'undefined' && forge_enabled_if_available){
 			useForge = true;
 			// forge.enableDebug();
+			onReady();
+		}
+
+		// phonegap/cordova usage
+		var usePg = false;
+		try {
+			if(1==1){
+				usePg = true;
+				onReady();
+			}
+		} catch(err){
+
 		}
 		
 		document.addEventListener("deviceready", function(){
+			onReady();
+		}, false);
+
+
+		function onReady(){
 
 			$(document).ready(function(){
 				// alert(1);
@@ -112,8 +129,7 @@
 				$('body').css('height',$(window).height() + 'px');
 				App.init();
 			});
-
-		}, false);
+		}
 
 	</script>
 
