@@ -274,7 +274,7 @@ var App = {
 
 		}
 
-		var usePg = false;
+		var usePg = true;
 		if(usePg){
 			var pushNotification;
 			try 
