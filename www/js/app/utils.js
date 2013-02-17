@@ -92,6 +92,27 @@ App.Utils = {
 					dfd.resolve(null);
 				});
 
+			} else if(usePg){
+
+				// Open database
+				// - switch Phonegap/cordova to Database instead of localStorage?
+				// - persistent? 
+				// var dbShell = window.openDatabase('minimail', "1.0", database_displayname, "Minimail", 1000000);
+
+				setTimeout(function(){
+					var value = window.localStorage.getItem(key);
+
+					try {
+						value = JSON.parse(value);
+					} catch(err){
+						dfd.resolve(null);
+						return;
+					}
+
+					dfd.resolve(value);
+
+				},1);
+
 			} else {
 
 				setTimeout(function(){
@@ -131,6 +152,15 @@ App.Utils = {
 					clog(error);
 					dfd.resolve(null);
 				});
+
+			} else if(usePg){
+
+				setTimeout(function(){
+					var tmp = window.localStorage.setItem(key,JSON.stringify(value));
+
+					dfd.resolve(tmp);
+
+				},1);
 
 			} else {
 				

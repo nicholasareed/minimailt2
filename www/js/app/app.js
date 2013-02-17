@@ -294,9 +294,10 @@ var App = {
 				}
 			}
 			catch(err) { 
-				txt="There was an error on this page.\n\n"; 
-				txt+="Error description: " + err.message + "\n\n"; 
-				alert(txt); 
+				// txt="There was an error on this page.\n\n"; 
+				// txt+="Error description: " + err.message + "\n\n"; 
+				// alert(txt); 
+				alert('Push Error');
 			}
 
 			// Init MENU button on Android (not always there?)
