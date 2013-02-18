@@ -287,6 +287,9 @@ var App = {
 						// console.log(err);
 						// alert(err);
 					}, {"senderID":"312360250527","ecb":"onNotificationGCM"});
+					$(document).on('onNotificationGCM',function(){
+						alert('new notification');
+					});
 				} else {
 					// alert('not');
 					$("#app-status-ul").append('<li>registering iOS</li>');
