@@ -9,12 +9,12 @@ Source for the minimail mobile email client for Android. The app works in conjun
 - Android 2.2+
 
 ## Option 1: Build with PhoneGap Build  
-1. Fork this repo 
+1. Fork this repo (optional)
 1. Sign up for Adobe PhoneGap Build: http://build.phonegap.com/plans/free 
 1. Create a new project in PhoneGap Build using your forked GitHub URL 
-1. Build the project and download the Android build (only Android is currently supported)
+1. Build the project and download the Android build (must enable )
 
-## Option 2: Build locally with Eclipse SDK
+## Option 2: Build locally with Eclipse
 1. (coming soon)
 1. Follow the instructions at https://github.com/emailbox/minimail_mobileapp_full (coming soon)
 
@@ -35,7 +35,7 @@ Want to run your own server-side minimail code as well? (available soon)
 - Please post (additional) issues in GitHub's issue tracker! 
 
 ## How to build (coming soon):  
-1. Download the Android SDK tools  
+1. Download the Android SDK tools (adt-bundle) 
 1. Configure Eclipse IDE and ADT Plugin (download from one place)  
 1. Run `./create <path> <com.name> <app_name>`  
 1. Clone minimail app and overwrite files in created directory  
