@@ -18,7 +18,7 @@ Source for the minimail mobile email client for Android. The app works in conjun
 1. (coming soon)
 1. Follow the instructions at https://github.com/emailbox/minimail_mobileapp_full (coming soon)
 
-bq. **Note:** Push Notifications don't work when building locally
+> **Note:** Push Notifications don't work when building locally
 
 ## Server-side  
 Want to run your own server-side minimail code as well? (available soon)  
